@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merry Christmas My Love ❤️</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;} body{ background:linear-gradient(120deg,#0f2027,#203a43,#2c5364); color:white; overflow-x:hidden; } section{ min-height:100vh; display:flex; justify-content:center; align-items:center; flex-direction:column; padding:20px; text-align:center; }
+
+h1{ font-size:2.5rem; margin-bottom:15px; }
+
+p{ font-size:1.1rem; max-width:600px; }
+
+.btn{ margin-top:30px; padding:12px 30px; background:#ff4d6d; border:none; color:white; font-size:1.1rem; border-radius:30px; cursor:pointer; box-shadow:0 10px 30px rgba(0,0,0,0.3); }
+
+.love{ font-family:'Great Vibes',cursive; font-size:3rem; color:#ffb3c6; }
+
+.slide{ opacity:0; transform:translateY(40px); transition:1s; }
+
+.slide.active{ opacity:1; transform:translateY(0); }
+
+img{ width:250px; height:250px; object-fit:cover; border-radius:20px; margin:15px; box-shadow:0 10px 30px rgba(0,0,0,0.4); }
+
+/* Snow */ .snowflake{ position:fixed; top:-10px; color:white; user-select:none; animation:fall linear infinite; } @keyframes fall{ to{transform:translateY(110vh);} } </style>
+
+</head>
+<body>
+<<audio id="music" src="love-song.mp3"></audio>
+
+<section class="slide">
+  <h1 class="love">Hey Neha ❤️</h1>
+  <p>Christmas feels incomplete without you here… but love has no distance.</p>
+</section><section class="slide">
+  <h1>Our Memories 📸</h1>
+<img src="photo1.jpg">
+<img src="photo2.jpg">
+  <p>Every picture holds a thousand emotions… and one promise — forever.</p>
+</section><section class="slide">
+  <h1>For You 💌</h1>
+  <p>
+    Miles may keep us apart,<br>
+    But never heart from heart.<br><br>
+    Tum door ho kar bhi itni paas ho,<br>
+    Jaise har dua ka tum hi ehsaas ho ❤️
+  </p>
+</section><section class="slide">
+  <h1>Merry Christmas 🎄</h1>
+  <p class="love">Neha, you are my favorite gift… today and always.</p>
+  <button class="btn" onclick="playMusic()">Tap to Unlock Surprise 🎁</button>
+</section><section class="slide">
+  <h1>Final Surprise 💖</h1>
+  <p>
+    Neha, distance sirf milne se rokti hai,<br>
+    pyaar karne se nahi…<br><br>
+    Iss Christmas main bas ek hi wish hai —<br>
+    tum mere paas ho, aur main tumhara ❤️
+  </p>
+</section><script>
+const slides=document.querySelectorAll('.slide');
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('active');}
+  });
+},{threshold:0.3});
+slides.forEach(slide=>observer.observe(slide));
+
+function playMusic(){
+  document.getElementById('music').play();
+  alert('Merry Christmas My Love ❤️');
+}
+
+// Snow Generator
+for(let i=0;i<40;i++){
+  let snow=document.createElement('div');
+  snow.className='snowflake';
+  snow.innerHTML='❄';
+  snow.style.left=Math.random()*100+'vw';
+  snow.style.animationDuration=3+Math.random()*5+'s';
+  snow.style.opacity=Math.random();
+  snow.style.fontSize=10+Math.random()*20+'px';
+  document.body.appendChild(snow);
+}
+</script></body>
+  </html>
